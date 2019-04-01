@@ -24,6 +24,10 @@ function fish_prompt
     # │ 1	15048	0%	arrêtée	sleep 100000
     # ╰─>$ echo there
 
+    # First, save the result of the previous command
+    and set retc green
+    or set retc red
+
     set -q __fish_git_prompt_showupstream
     or set -g __fish_git_prompt_showupstream auto
 
@@ -45,8 +49,6 @@ function fish_prompt
         set_color -o green
         echo -n ']'
     end
-    and set retc green
-    or set retc red
 
     set_color $retc
     echo -n '┬─'
